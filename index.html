@@ -29,34 +29,36 @@
       </form>
       <p id="login-error"></p>
     </section>
-    <section id="attendance" style="display: none;">
-      <h2>Attendance</h2>
-      <form id="attendance-form">
-        <label for="date">Date:</label>
-        <input type="date" id="date" name="date">
-        <label for="time">Time:</label>
-        <input type="time" id="time" name="time">
-        <label for="reason">Reason for absence:</label>
-        <input type="text" id="reason" name="reason">
-        <button id="submit-attendance-btn">Submit</button>
-      </form>
-      <div id="attendance-calendar"></div>
-    </section>
-    <section id="invoice" style="display: none;">
-      <h2>Invoice</h2>
-      <form id="invoice-form">
-        <label for="invoice-date">Date:</label>
-        <input type="date" id="invoice-date" name="invoice-date">
-        <label for="invoice-amount">Amount:</label>
-        <input type="number" id="invoice-amount" name="invoice-amount">
-        <button id="submit-invoice-btn">Submit</button>
-      </form>
-      <div id="invoice-list"></div>
-    </section>
-    <section id="accounts" style="display: none;">
-      <h2>Accounts</h2>
-      <div id="accounts-list"></div>
-    </section>
+    <div class="panels">
+      <div class="panel" id="attendance-panel">
+        <h2>Attendance</h2>
+        <form id="attendance-form">
+          <label for="date">Date:</label>
+          <input type="date" id="date" name="date">
+          <label for="time">Time:</label>
+          <input type="time" id="time" name="time">
+          <label for="reason">Reason for absence:</label>
+          <input type="text" id="reason" name="reason">
+          <button id="submit-attendance-btn">Submit</button>
+        </form>
+        <div id="attendance-calendar"></div>
+      </div>
+      <div class="panel" id="invoice-panel" style="display: none;">
+        <h2>Invoice</h2>
+        <form id="invoice-form">
+          <label for="invoice-date">Date:</label>
+          <input type="date" id="invoice-date" name="invoice-date">
+          <label for="invoice-amount">Amount:</label>
+          <input type="number" id="invoice-amount" name="invoice-amount">
+          <button id="submit-invoice-btn">Submit</button>
+        </form>
+        <div id="invoice-list"></div>
+      </div>
+      <div class="panel" id="accounts-panel" style="display: none;">
+        <h2>Accounts</h2>
+        <div id="accounts-list"></div>
+      </div>
+    </div>
   </main>
   <script src="script.js"></script>
 </body>
