@@ -2,9 +2,9 @@
 const loginForm = document.getElementById('login-form');
 const loginBtn = document.getElementById('login-btn');
 const loginError = document.getElementById('login-error');
-const attendanceSection = document.getElementById('attendance');
-const invoiceSection = document.getElementById('invoice');
-const accountsSection = document.getElementById('accounts');
+const attendancePanel = document.getElementById('attendance-panel');
+const invoicePanel = document.getElementById('invoice-panel');
+const accountsPanel = document.getElementById('accounts-panel');
 const attendanceForm = document.getElementById('attendance-form');
 const invoiceForm = document.getElementById('invoice-form');
 const attendanceCalendar = document.getElementById('attendance-calendar');
@@ -24,9 +24,9 @@ loginBtn.addEventListener('click', (e) => {
   const password = document.getElementById('password').value;
   if (users[username] === password) {
     loginError.textContent = '';
-    attendanceSection.style.display = 'block';
-    invoiceSection.style.display = 'block';
-    accountsSection.style.display = 'block';
+    attendancePanel.style.display = 'block';
+    invoicePanel.style.display = 'block';
+    accountsPanel.style.display = 'block';
   } else {
     loginError.textContent = 'Invalid username or password';
   }
@@ -72,3 +72,16 @@ const accountsHTML = `
   </div>
 `;
 accountsList.innerHTML = accountsHTML;
+
+// Add event listeners to the navigation links
+document.querySelectorAll('nav a').forEach((link) => {
+  link.addEventListener('click', (e) => {
+    e.preventDefault();
+    const panelId = link.getAttribute('href').replace('#', '');
+    const panel = document.getElementById(`${panelId}-panel`);
+    document.querySelectorAll('.panel').forEach((p) => {
+      p.style.display = 'none';
+    });
+    panel.style.display = 'block';
+  });
+});
